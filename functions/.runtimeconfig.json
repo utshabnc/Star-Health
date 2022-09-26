@@ -1,0 +1,5 @@
+{
+  "prisma": {
+    "db": "postgresql://postgres:ZJOuoRBBTeAlBKC0HxNmw@34.71.116.26/postgres"
+  }
+}

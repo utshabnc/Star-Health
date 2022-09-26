@@ -1,0 +1,194 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["fullTextSearch"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Doctor {
+  id                     String                   @id
+  firstName              String
+  middleName             String?
+  lastName               String
+  addressLine1           String
+  addressLine2           String?
+  city                   String
+  state                  String
+  zipCode                String
+  specialty              String?
+  rank                   Int
+  payments               Payment[]
+  reviews                Review[]
+  stateSummary           StateDoctor[]
+  ManufacturerDoctors    ManufacturerDoctors[]
+  ManufacturerTopPayment ManufacturerTopPayment[]
+}
+
+model State {
+  id            String              @id
+  name          String
+  rank          Int
+  summaries     StateSummary[]
+  items         StateItem[]
+  doctors       StateDoctor[]
+  manufacturers StateManufacturer[]
+}
+
+model StateCounty {
+  id        String        @id
+  stateId   String
+  name     String
+  fips      String
+  totalAmount Float
+  population Int
+  year String
+  drugType String
+}
+
+model StateSummary {
+  id          String @id @default(uuid())
+  stateId     String
+  state       State  @relation(fields: [stateId], references: [id])
+  totalAmount Float
+  year        String
+  rank Int?
+  drugType String
+}
+
+model StateItem {
+  id               String       @id @default(uuid())
+  stateId          String
+  manufacturerId   String
+  productName      String?
+  productType      String?
+  year             String
+  totalAmount      Float
+  transactionCount Int
+  drugType String
+  manufacturer     Manufacturer @relation(fields: [manufacturerId], references: [id])
+  state            State        @relation(fields: [stateId], references: [id])
+}
+
+model StateDoctor {
+  id               String @id @default(uuid())
+  stateId          String
+  doctorId         String
+  year             String
+  totalAmount      Float
+  transactionCount Int
+  drugType String
+  doctor           Doctor @relation(fields: [doctorId], references: [id])
+  state            State  @relation(fields: [stateId], references: [id])
+}
+
+model StateManufacturer {
+  id               String       @id @default(uuid())
+  stateId          String
+  manufacturerId   String
+  year             String
+  totalAmount      Float
+  transactionCount Int
+  drugType String
+  manufacturer     Manufacturer @relation(fields: [manufacturerId], references: [id])
+  state            State        @relation(fields: [stateId], references: [id])
+}
+
+model Manufacturer {
+  id                     String                   @id
+  name                   String
+  state                  String?
+  country                String
+  rank                   Int
+  payments               Payment[]
+  stateItems             StateItem[]
+  stateSummaries         StateManufacturer[]
+  items                  ManufacturerItems[]
+  doctors                ManufacturerDoctors[]
+  ManufacturerTopPayment ManufacturerTopPayment[]
+  ManufacturerSummary    ManufacturerSummary[]
+  ManufacturerState      ManufacturerState[]
+}
+
+model ManufacturerSummary {
+  id             String       @id @default(uuid())
+  manufacturerId String
+  totalAmount    Float
+  year           String
+  manufacturer   Manufacturer @relation(fields: [manufacturerId], references: [id])
+}
+
+model ManufacturerState {
+  id               String       @id @default(uuid())
+  manufacturerId   String
+  state            String
+  year             String
+  totalAmount      Float
+  transactionCount Int
+  manufacturer     Manufacturer @relation(fields: [manufacturerId], references: [id])
+}
+
+model ManufacturerItems {
+  id               String       @id @default(uuid())
+  manufacturerId   String
+  productName      String?
+  productType      String?
+  year             String
+  totalAmount      Float
+  transactionCount Int
+  manufacturer     Manufacturer @relation(fields: [manufacturerId], references: [id])
+}
+
+model ManufacturerDoctors {
+  id               String       @id @default(uuid())
+  manufacturerId   String
+  year             String
+  doctorId         String
+  totalAmount      Float
+  transactionCount Int
+  manufacturer     Manufacturer @relation(fields: [manufacturerId], references: [id])
+  doctor           Doctor       @relation(fields: [doctorId], references: [id])
+}
+
+model ManufacturerTopPayment {
+  id             String       @id @default(uuid())
+  manufacturerId String
+  year           String
+  doctorId       String
+  amount         Float
+  manufacturer   Manufacturer @relation(fields: [manufacturerId], references: [id])
+  doctor         Doctor       @relation(fields: [doctorId], references: [id])
+}
+
+model Review {
+  id        String   @id @default(uuid())
+  doctor    Doctor   @relation(fields: [doctorId], references: [id])
+  doctorId  String
+  rating    Int
+  text      String
+  createdAt DateTime @default(now())
+  createdBy String
+}
+
+model Payment {
+  id               String       @id
+  doctor           Doctor       @relation(fields: [doctorId], references: [id])
+  doctorId         String
+  manufacturer     Manufacturer @relation(fields: [manufacturerId], references: [id])
+  manufacturerName String
+  manufacturerId   String
+  amount           Float
+  date             DateTime     @db.Date
+  year             String
+  paymentType      String?
+  paymentNature    String?
+  productType      String?
+  productCategory  String?
+  productName      String?
+  contextualInfo   String?
+}

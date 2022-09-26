@@ -1,0 +1,47 @@
+{
+  "functions": {
+    "predeploy": "npm --prefix \"$RESOURCE_DIR\" run build"
+  },
+  "hosting": {
+    "public": "dist",
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "rewrites": [
+      {
+        "source": "/api/search",
+        "function": "search"
+      },
+      {
+        "source": "/api/doctor",
+        "function": "doctor"
+      },
+      {
+        "source": "/api/manufacturer",
+        "function": "manufacturer"
+      },
+      {
+        "source": "/api/state",
+        "function": "state"
+      },
+      {
+        "source": "/api/allStates",
+        "function": "allStates"
+      },
+      {
+        "source": "/api/addReview",
+        "function": "addReview"
+      },
+      {
+        "source": "/doctor/*",
+        "destination": "/index.html"
+      },
+      {
+        "source": "/manufacturer/*",
+        "destination": "/index.html"
+      },
+      {
+        "source": "/state/*",
+        "destination": "/index.html"
+      }
+    ]
+  }
+}
