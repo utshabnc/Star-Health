@@ -118,7 +118,7 @@ function App() {
         <SearchPage />
       </div>
       <div className='sm:w-[50%] flex flex-col'>
-        <h3 className='flex text-md sm:text-xl text-center font-semibold justify-center text-violet-700 mb-4'>
+        <h3 className='flex text-md sm:text-xl text-center font-semibold justify-center text-violet-700 mb-4 mt-4 sm:mt-4'>
           Heatmap of Company Payments to Doctors
         </h3>
         <Dropdown

@@ -121,9 +121,9 @@ const DoctorReviews = (props: Props) => {
 
   return (
     <>
-      <div className=' min-h-screen'>
+      <div className=''>
         <Modal open={showModal} onClose={() => setShowModal(false)} />
-        <div className='sm:p-5 rounded bg-white  h-fit'>
+        <div className='sm:p-5 rounded bg-white'>
           <div className='flex flex-row'>
             {props.doctorId == null && (
               <div>
@@ -157,7 +157,7 @@ const DoctorReviews = (props: Props) => {
               </div>
             </div>
           </div>
-          <div className='flex flex-col h-full py-5 sm:px-2 lg:px-28 w-full'>
+          <div className='flex flex-col py-5 sm:px-2 lg:px-28'>
             <ReviewForm
               reviewText={reviewText}
               reviewStars={reviewStars}

@@ -257,7 +257,7 @@ const DoctorDetails = () => {
               style={{
                 maxHeight: screen.width > 640 ? Math.ceil(screen.width * 0.24) : undefined,
               }}
-              className='flex flex-col sm:w-1/2'
+              className='flex flex-col sm:w-1/2 max-h-[300px] sm:max-h-[100%]'
             >
               <p className='flex justify-center text-base font-semibold'>
                 All Transaction Summaries

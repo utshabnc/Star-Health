@@ -103,7 +103,7 @@ const SearchPage = ({ buttonPlaceholder, buttonSmall }: Props) => {
         }
         className={`
               ${buttonSmall ? 'max-w-[160px]' : ''}
-               mx-2 sm:mx-0 sm:min-w-[400px] sm:max-w-[400px] focus:ring-violet-400 border-2 focus:border-violet-600 pl-3 pr-3 text-md text-white placeholder-white border-violet-800 bg-violet-500 rounded-md h-9`}
+               mx-2 sm:mx-0 sm:min-w-[400px] sm:max-w-[400px] focus:ring-violet-400 border-2 focus:border-violet-600 pl-3 pr-3  text-sm sm:text-md text-white placeholder-white border-violet-800 bg-violet-500 rounded-md h-9`}
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />

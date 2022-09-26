@@ -23,8 +23,8 @@ function ReviewForm(review: Review) {
           onChange={review.setReviewStars}
         />
         <textarea
-          className='pl-3 mt-5 text-gray-800 py-2 border-purp-2 rounded-md focus:ring
-focus:ring-purp-4 ring-purp-2 ring focus:ring-offset-2 focus:border-none block resize-none outline-none'
+          className='pl-3 shadow-lg mt-5 text-gray-800 py-2 border-purp-2 rounded-md focus:ring
+focus:ring-purp-4 ring-purp-2 ring focus:ring-offset-2 appearance-none resize-none'
           placeholder=''
           value={review.reviewText}
           onChange={review.setReviewText}
