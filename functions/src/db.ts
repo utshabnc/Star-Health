@@ -1,5 +1,6 @@
 import { Prisma, PrismaClient } from '@prisma/client';
 import _ from 'lodash';
+import { getUser } from './auth';
 
 const prisma = new PrismaClient({
   log: ['query', 'info', 'warn', 'error'],
@@ -165,9 +166,17 @@ const db = {
       }))
       .value();
 
+    const reviews = await Promise.all(
+      doctor?.reviews?.map(async (review) => ({
+        ...review,
+        user: await getUser(review.createdBy).catch(() => {}),
+      })) ?? []
+    );
+
     return {
       ...doctor,
       payments,
+      reviews,
       totalAmount,
       topProducts,
       topManufacturers,

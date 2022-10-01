@@ -141,7 +141,7 @@ export const ManuDets = (schema: ManuSchema) => {
         <div className='grid grid-cols-1'>
           <div className='my-2 mx-1 p-2 border-2 border-violet-400 rounded-lg grid grid-cols-3'>
             <div className='flex flex-col '>
-              <p className='flex text-xs sm:text-base text-center  justify-center underline font font-semibold'>
+              <p className='flex text-sm sm:text-base text-center  justify-center underline font font-semibold'>
                 Top Paid Doctors
               </p>
               <ul className='flex flex-col items-center'>
@@ -168,7 +168,7 @@ export const ManuDets = (schema: ManuSchema) => {
               </ul>
             </div>
             <div className='flex flex-col '>
-              <p className='flex text-xs sm:text-base text-center  justify-center underline font font-semibold'>
+              <p className='flex text-sm sm:text-base text-center  justify-center underline font font-semibold'>
                 Largest Payments
               </p>
               <ul className='flex flex-col items-center'>
@@ -188,7 +188,7 @@ export const ManuDets = (schema: ManuSchema) => {
               </ul>
             </div>
             <div className='flex flex-col '>
-              <p className='flex text-xs sm:text-base text-center  justify-center underline font font-semibold'>
+              <p className='flex text-sm sm:text-base text-center  justify-center underline font font-semibold'>
                 Most Common Items
               </p>
               <ul className='flex flex-col items-center'>

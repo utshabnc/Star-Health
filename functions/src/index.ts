@@ -7,6 +7,10 @@ import addReviewHandler from './addReview';
 import searchHandler from './search';
 
 import { Handler, HandlerWithAuth } from './types';
+// import cloudSqlDb from './cloudSqlDb';
+// export const scheduledDbStart = functions.pubsub.schedule('every day 06:00').timeZone('America/New_York').onRun(cloudSqlDb.start);
+// export const scheduledDbStop = functions.pubsub.schedule('every day 20:00').timeZone('America/New_York').onRun(cloudSqlDb.stop);
+
 
 process.env.DATABASE_URL = functions.config().prisma.db;
 
@@ -35,3 +39,4 @@ export const state = functions.https.onRequest(withCors(stateHandler));
 export const allStates = functions.https.onRequest(withCors(allStatesHandler));
 export const search = functions.https.onRequest(withCors(searchHandler));
 export const addReview = functions.https.onRequest(withCors(addReviewHandler));
+

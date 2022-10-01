@@ -5,7 +5,7 @@ import zod from 'zod';
 
 const reviewParams = zod.object({
   doctorId: zod.string(),
-  rating: zod.number().int().min(1).max(5),
+  rating: zod.number().int().min(0).max(5),
   text: zod.string(),
 });
 
@@ -24,7 +24,7 @@ const addReview: HandlerWithAuth = async (req, res) => {
   }
 
   const { doctorId, rating, text } = parseResult.data;
-
+  
   const review = await db.addReview({
     doctorId,
     rating,

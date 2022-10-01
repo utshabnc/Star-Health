@@ -14,7 +14,7 @@ function ReviewForm(review: Review) {
   return (
     <>
       <div className='flex flex-col px-8'>
-        <p className='text-purp-4 text-xl font-semibold align'>Leave Review</p>
+        <p className='text-purp-4 text-xl font-semibold align'>Write a Review</p>
         <ReactStars
           value={review.reviewStars}
           count={5}

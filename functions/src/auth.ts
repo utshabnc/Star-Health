@@ -44,3 +44,5 @@ const getToken = (request: Request) => {
 
   return token;
 };
+
+export const getUser = (userId: string) => admin.auth().getUser(userId);

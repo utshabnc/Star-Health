@@ -133,7 +133,7 @@ const StateDetails = () => {
           />
 
           <div>
-            <div className='flex flex-col sm:flex-row px-2'>
+            <div className='flex flex-col sm:flex-row sm:px-2'>
               <div className='sm:w-1/2 inline-block align-middle'>
                 <BarChart
                   title='Top Manufacturers'

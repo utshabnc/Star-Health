@@ -170,7 +170,7 @@ const DoctorDetails = () => {
         <div className='grid grid-cols-1'>
           <div className='mx-1 p-2 border-2 border-violet-400 rounded-lg grid grid-cols-3'>
             <div className='flex flex-col '>
-              <p className='flex text-xs sm:text-base text-center justify-center underline font font-semibold'>
+              <p className='flex text-sm sm:text-base text-center justify-center underline font font-semibold'>
                 Top Items By Payment
               </p>
               <ul className='flex flex-col items-center'>
@@ -191,7 +191,7 @@ const DoctorDetails = () => {
               </ul>
             </div>
             <div className='flex flex-col '>
-              <p className='flex text-xs sm:text-base text-center justify-center underline font font-semibold'>
+              <p className='flex text-sm sm:text-base text-center justify-center underline font font-semibold'>
                 Largest Payments
               </p>
               <ul className='flex flex-col items-center'>
@@ -213,7 +213,7 @@ const DoctorDetails = () => {
               </ul>
             </div>
             <div className='flex flex-col '>
-              <p className='flex text-xs sm:text-base text-center justify-center underline font font-semibold'>
+              <p className='flex text-sm sm:text-base text-center justify-center underline font font-semibold'>
                 Top Transaction Items
               </p>
               <ul className='flex flex-col items-center'>
@@ -257,12 +257,12 @@ const DoctorDetails = () => {
               style={{
                 maxHeight: screen.width > 640 ? Math.ceil(screen.width * 0.24) : undefined,
               }}
-              className='flex flex-col sm:w-1/2 max-h-[300px] sm:max-h-[100%]'
+              className='flex flex-col sm:w-1/2 overflow-scroll max-h-[100%]'
             >
-              <p className='flex justify-center text-base font-semibold'>
+              <p className='flex justify-center mt-2 text-base font-semibold'>
                 All Transaction Summaries
               </p>
-              <div className='flex gap-2 flex-col overflow-scroll'>
+              <div className='flex gap-2 flex-col'>
                 {doctor.payments
                   .sort(
                     (a, b) =>

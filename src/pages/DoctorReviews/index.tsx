@@ -22,7 +22,7 @@ const DoctorReviews = (props: Props) => {
   const addReview = useAddReviewMutation();
 
   const [reviewText, setReviewText] = useState('');
-  const [reviewStars, setReviewStars] = useState(5);
+  const [reviewStars, setReviewStars] = useState(0);
   const navigate = useNavigate();
 
   const onSubmitReview = () => {
@@ -83,9 +83,9 @@ const DoctorReviews = (props: Props) => {
                 </div>
               )}
 
-              <div className='flex justify-center w-11/12'>
+              <div className='flex justify-center w-full'>
                 <div className='flex flex-col'>
-                  <p className='text-violet-700 text-2xl p-1 font-semibold'>
+                  <p className='text-violet-700 text-center text-2xl p-1 font-semibold'>
                     Reviews
                   </p>
 
@@ -149,12 +149,12 @@ const DoctorReviews = (props: Props) => {
               </div>
             )}
 
-            <div className='flex justify-center w-11/12 h-full'>
-              <div className='flex flex-col'>
-                <p className='text-violet-700 text-2xl p-1 font-semibold'>
+            <div className='flex justify-center w-full h-full'>
+
+                <p className='text-violet-700 text-center text-2xl p-1 font-semibold'>
                   Reviews
                 </p>
-              </div>
+         
             </div>
           </div>
           <div className='flex flex-col py-5 sm:px-2 lg:px-28'>

@@ -68,7 +68,7 @@ const InfoSection = ({
                 {screen.width > 640 ? (
                   <img src={item.img} className='sm:w-38 sm:h-32' />
                 ) : (
-                  <img src={item.img} className='w-17 h-17' />
+                  <img src={item.img} style={{height:90,width:100}}  />
                 )}
               </>
             )}

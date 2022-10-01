@@ -33,7 +33,7 @@ const PieChart = ({
   };
 
   return (
-    <div className='w-7/12'>
+    <div className='w-full sm:w-7/12'>
       <Pie options={options} data={data} />
     </div>
   );
