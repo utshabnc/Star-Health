@@ -14,4 +14,4 @@ The goal of this effort is to move off of GCP in favor of lighter weight / more 
 
 Currently the codebase, database, authorization, app and function deployements are hosted on GCP/Firebase:
 
-![legacy infrastructure](public/images/ArchitectureDiagramLegacy.png)
+![legacy infrastructure](public/images/InfraDiagramLegacy.png)
