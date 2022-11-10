@@ -6,7 +6,6 @@ Star Health is a public data analytics platform focused on healthcare. It strive
 
 ![screenshot](public/images/ScreenGrabHomepage.png)
 
----
 
 ## Infrastructure
 
@@ -17,7 +16,6 @@ The platform consists of the following:
 - Serverless functions on Cloud Functions
 - Firebase Auth
 
----
 
 ## App
 
@@ -32,7 +30,6 @@ This app is built with:
 - [Firebase](https://firebase.google.com/docs/reference/node)
 
 
----
 
 ## Quick Start
 
@@ -64,9 +61,10 @@ npx vite dev
   ➜  Network: use --host to expose
 ```
 
----
 
 ## Development
+
+To make changes to the code, create a new branch for the patch and open a PR to merge it into `main` when ready.
 
 The app is structured roughly as follows:
 ```
@@ -90,9 +88,6 @@ root
 |_ ...config/env files (TypeScript, Vite, etc.)
 ```
 
-To make changes to the code, create a new branch for the patch and open a PR to merge it into `main` when ready.
-
----
 
 ## Migration from GCP
 
