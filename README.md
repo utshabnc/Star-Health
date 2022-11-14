@@ -2,20 +2,23 @@
 
 https://starhealth.io/
 
-Star Health is a public data analytics platform focused on healthcare. It strives to make available doctor and drug data more accessible to the general public.
+Star Health is a public data analytics platform focused on healthcare. It strives to make public medical data more accessible to the general public.
 
 ![screenshot](public/images/ScreenGrabHomepage.png)
 
 
-## Infrastructure
 
-The platform consists of the following:
+## Architecture
 
-- React app hosted on GitHub and deployed on Vercel
-- PostgreSQL database
-- Serverless functions on Cloud Functions
-- Firebase Auth
+The platform consists of:
+- [React](https://reactjs.org/) app hosted on [GitHub](https://github.com/utshabnc/Star-Health) and deployed on [Vercel](https://vercel.com/)
+- [PostgreSQL](https://www.postgresql.org/) [database](https://console.cloud.google.com/sql/instances/starhealth/overview?project=starhealth-io)
+- Serverless functions on [Google Cloud Functions](https://cloud.google.com/functions)
+- [Firebase Authentication](https://firebase.google.com/docs/auth)
+- [Google Cloud Platform project](https://console.cloud.google.com/welcome?project=starhealth-io)
+- [Firebase project](https://console.firebase.google.com/project/starhealth-io/overview)
 
+[View diagram](#current-architecture)
 
 ## App
 
@@ -33,27 +36,31 @@ This app is built with:
 
 ## Quick Start
 
-Prerequisites:
-- [Node.js](https://nodejs.org/en/)
-- [Git](https://git-scm.com/)
-- Development Environment / IDE ([VSCode](https://code.visualstudio.com/) rec.)
+>This project requires [Node.js](https://nodejs.org/en/) and [Git](https://git-scm.com/). Make sure they are installed in your local development environment. You can check that they are by running:
+>```
+>git --version
+>
+>node --version
+>```
 
-### 1. Clone the project
+1. Clone the project and navigate to it.
 ```
 git clone https://github.com/utshabnc/Star-Health.git
+
+cd Star-Health/
 ```
 
-### 2. Install packages
+2. Install packages.
 ```
 npm install
 ```
 
-### 3. Start the app
+3. Run in development mode.
 ```
 npx vite dev
 ```
 
-### 4. Once started, the app is accessible on the given port
+4. Open in browser at http://localhost:5173/.
 ```
   VITE v3.0.9  ready in 217 ms
 
@@ -64,9 +71,17 @@ npx vite dev
 
 ## Development
 
-To make changes to the code, create a new branch for the patch and open a PR to merge it into `main` when ready.
+Check the [technology stack](#current-architecture) listed above and review their introductory documentation.
 
-The app is structured roughly as follows:
+Create a new branch for any significant change. Commit messages should be short and descriptive, i.e. `fix dropdown behavior`.
+
+> Before you commit, make sure you have only the relevant changes staged.
+
+Open [pull request](https://github.com/utshabnc/Star-Health/pulls) to `main` and request review from a teammate.
+
+On push/merge, the app is automatically deployed on Vercel to `preview` and to `production` with changes to `main`.
+
+### File Structure
 ```
 root
 |_ functions/
@@ -89,19 +104,22 @@ root
 ```
 
 
-## Migration from GCP
+### Migration from GCP
 
 The goal of this effort is to move out of GCP in favor of more modular, light-weight solutions like GitHub and Vercel.
 
-The codebase, database, authorization, app and function deployements were initially built for, and hosted on GCP + Firebase:
+Initially, the codebase, database, authorization, app and function deployements were built for and hosted on GCP + Firebase:
 
-![legacy infrastructure](public/images/InfraDiagramLegacy.png)
+### Legacy Architecture
+![Legacy Architecture](public/images/InfraDiagramLegacy.png)
 
 (Nov 8, '22) The code and app deployments have been moved to GitHub and Vercel:
 
-![current infrastructure](public/images/InfraDiagramCurrent.png)
+### Current Architecture
 
-Some suggestions for further solutions:
+![Current Architecture](public/images/InfraDiagramCurrent.png)
+
+Possible future replacements:
 - PlanetScale or Railway to house the data
 - Serverless functions on Vercel
 - NextJS for NextAuth (and other benefits)
