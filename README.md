@@ -120,6 +120,23 @@ Initially, the codebase, database, authorization, app and function deployements 
 ![Current Architecture](public/images/InfraDiagramCurrent.png)
 
 Possible future replacements:
-- PlanetScale or Railway to house the data
+- PlanetScale to house the data
 - Serverless functions on Vercel
 - NextJS for NextAuth (and other benefits)
+
+
+### Drug Page
+
+![drug page](public/images/ScreenGrabDrugPage.png)
+
+The drug page has been scaffolded out but is not hooked up to the database yet. Currently, although the database contains relevant data for this page, it is not indexed to support efficient querying of the data by drug specifically. 
+
+This initial implementation of the page layout contains the following:
+- A detail section containing:
+  - Top Doctors By Payment (doctors with the largest total payments for the drug)
+  - Largest Payments (largest single payments for the drug)
+  - Top Transaction Doctors (payment count per doctor for payments for the drug)
+- A map of the United States to show geographical patterns in transaction count, cost, or other variables relating to the drug (to be titled + included with a dropdown)
+- A list of transactions for the drug
+
+> To the developer: This section is meant to be temporary. Remove it once the drug page has been implemented.

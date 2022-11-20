@@ -15,7 +15,7 @@ export default {
       paymentNature: "Food and Beverage",
       productType: "Drug",
       productCategory: "Neuroscience",
-      productName: "Vraylar",
+      productName: "Drug Name",
       contextualInfo: null,
     },
     {
@@ -31,7 +31,7 @@ export default {
       paymentNature: "Food and Beverage",
       productType: "Drug",
       productCategory: "Neuroscience",
-      productName: "Vraylar",
+      productName: "Drug Name",
       contextualInfo: null,
     },
     {
@@ -47,7 +47,7 @@ export default {
       paymentNature: "Food and Beverage",
       productType: "Drug",
       productCategory: "Neuroscience",
-      productName: "Vraylar",
+      productName: "Drug Name",
       contextualInfo: null,
     },
   ],

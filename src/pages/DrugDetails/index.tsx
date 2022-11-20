@@ -31,12 +31,12 @@ import geo from "./example_geo_query";
  * The purpose of the drug page is to display transaction data by drug
  * rather than by doctor or manufacturer, as well as providing other information/history pertaining to the drug.
  *
- * This initial skeleton suggests:
- * - A detail section showing:
- *   - Top Doctors By Payment (doctors with the largest total payments made to them for the drug)
- *   - Largest Payments (largest single payments made to doctors for the drug)
- *   - Top Transaction Doctors (doctors for whom there are records of payment for to the drug by payment count)
- * - A map of the United States to show geographical patterns in transaction count, cost, or other variables relating to the drug
+ * This initial implementation contains:
+ * - A detail section containing:
+ *   - Top Doctors By Payment (doctors with the largest total payments for the drug)
+ *   - Largest Payments (largest single payments for the drug)
+ *   - Top Transaction Doctors (payment count per doctor for payments for the drug)
+ * - A map of the United States to show geographical patterns in transaction count, cost, or other variables relating to the drug (to be titled + included with a dropdown)
  * - A list of transactions for the drug
  */
 
