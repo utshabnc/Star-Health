@@ -25,6 +25,7 @@ ChartJS.register(
 
 import './index.css';
 import DoctorDetails from './pages/DoctorDetails';
+import DrugDetails from './pages/DrugDetails';
 import ManufacturerDetails from './pages/ManufacturerDetails';
 import StateDetails from './pages/StateDetails';
 import { NavFoot } from './components/NavFoot';
@@ -42,6 +43,7 @@ root.render(
           <Route path='/' element={<App />} />
           <Route path='doctor/:id' element={<DoctorDetails />} />
           <Route path='doctor/:id/reviews' element={<DoctorReviews />} />
+          <Route path='drug/:id' element={<DrugDetails />} />
           <Route path='manufacturer/:id' element={<ManufacturerDetails />} />
           <Route path='state/:id' element={<StateDetails />} />
         </Routes>

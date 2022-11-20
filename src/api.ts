@@ -87,6 +87,7 @@ const createUseQuery =
 
 const useSearchQuery = createUseQuery<SearchParams, SearchResponse>('search');
 const useDoctorQuery = createUseQuery<DoctorParams, DoctorResponse>('doctor');
+// const useDrugQuery = createUseQuery<DrugParams, DrugResponse>('drug');
 const useManufacturerQuery = createUseQuery<
   ManufacturerParams,
   ManufacturerResponse
