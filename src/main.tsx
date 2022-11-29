@@ -28,6 +28,7 @@ import DoctorDetails from './pages/DoctorDetails';
 import DrugDetails from './pages/DrugDetails';
 import ManufacturerDetails from './pages/ManufacturerDetails';
 import StateDetails from './pages/StateDetails';
+import DirectoryPage from './pages/DirectoryPage';
 import { NavFoot } from './components/NavFoot';
 import DoctorReviews from './pages/DoctorReviews';
 
@@ -46,6 +47,7 @@ root.render(
           <Route path='drug/:id' element={<DrugDetails />} />
           <Route path='manufacturer/:id' element={<ManufacturerDetails />} />
           <Route path='state/:id' element={<StateDetails />} />
+          <Route path='dir' element={<DirectoryPage />} />
         </Routes>
       </NavFoot>
     </BrowserRouter>

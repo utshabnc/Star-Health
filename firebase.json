@@ -26,6 +26,10 @@
         "source": "/api/allStates",
         "function": "allStates"
       },
+			{
+        "source": "/api/allManufacturers",
+        "function": "allManufacturers"
+      },
       {
         "source": "/api/addReview",
         "function": "addReview"

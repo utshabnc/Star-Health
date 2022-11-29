@@ -8,6 +8,7 @@ import {
 import { AddReviewParams } from '../functions/src/addReview';
 import { SearchParams, SearchResponse } from '../functions/src/search';
 import { AllStatesParams, AllStatesResponse } from '../functions/src/allStates';
+import { AllManufacturersParams, AllManufacturersResponse } from '../functions/src/allManufacturers';
 import { useUser } from './hooks';
 
 // Set to true to use firebase emulator
@@ -96,6 +97,9 @@ const useStateQuery = createUseQuery<StateParams, StateResponse>('state');
 const useAllStatesQuery = createUseQuery<AllStatesParams, AllStatesResponse>(
   'allStates'
 );
+const useAllManufacturersQuery = createUseQuery<AllManufacturersParams, AllManufacturersResponse>(
+  'allManufacturers'
+);
 
 const useAddReviewMutation = () => {
   const [user] = useUser();
@@ -121,6 +125,7 @@ export {
   useManufacturerQuery,
   useStateQuery,
   useAllStatesQuery,
+	useAllManufacturersQuery,
   useSearchQuery,
   useLazySearchQuery,
   useAddReviewMutation,

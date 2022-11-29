@@ -278,6 +278,20 @@ const db = {
     return states;
   },
 
+	allManufacturers: async ({}: {}) => {
+    const manufacturers = await prisma.manufacturerSummary.findMany({
+      where: {
+        year: 'ALL',
+      },
+      select: {
+        manufacturerId: true,
+        totalAmount: true,
+      },
+    });
+
+    return manufacturers;
+  },
+
   state: async ({
     id,
     year,

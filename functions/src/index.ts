@@ -3,6 +3,7 @@ import doctorHandler from './doctor';
 import manufacturerHandler from './manufacturer';
 import stateHandler from "./state";
 import allStatesHandler from "./allStates";
+import allManufacturersHandler from "./allManufacturers";
 import addReviewHandler from './addReview';
 import searchHandler from './search';
 
@@ -37,6 +38,7 @@ export const doctor = functions.https.onRequest(withCors(doctorHandler));
 export const manufacturer = functions.https.onRequest(withCors(manufacturerHandler));
 export const state = functions.https.onRequest(withCors(stateHandler));
 export const allStates = functions.https.onRequest(withCors(allStatesHandler));
+export const allManufacturers = functions.https.onRequest(withCors(allManufacturersHandler));
 export const search = functions.https.onRequest(withCors(searchHandler));
 export const addReview = functions.https.onRequest(withCors(addReviewHandler));
 
